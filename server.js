@@ -15,6 +15,29 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/fizzbuzz/:n', (req, res) => {
+  // request params for number being passed in
+  let fizzbuzz = [`${req.params.n}`];
+  let result;
+  for (let i = 1; i < 99999; i++) {
+    if (fizzbuzz % 3 === 0) {
+      if (fizzbuzz % 5 === 0) {
+        console.log('FizzBuzz');
+        result = 'FizzBuzz';
+      } else if (fizzbuzz % 3 === 0) {
+        console.log('Fizz');
+        result = 'Fizz';
+      }
+    } else if (fizzbuzz % 5 === 0) {
+      console.log('Buzz');
+      result = 'Buzz';
+    } else {
+      console.log(i);
+    }
+  }
+  res.send(result);
+});
+
 app.listen(8000, () => {
   console.log('Node.js listening on port ' + 8000);
 });
