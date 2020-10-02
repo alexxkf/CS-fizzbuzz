@@ -7,8 +7,16 @@ Exceptions:
 - for multiples of 3 & 5 return "FizzBuzz" */
 
 const express = require('express');
+// install body-parser to help decode the body from an HTTP request
+const bodyParser = require('body-parser');
 const app = express();
 
-app.listen(8000);
+// configuring body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.listen(8000, () => {
+  console.log('Node.js listening on port ' + 8000);
+});
 
 console.log(app);
