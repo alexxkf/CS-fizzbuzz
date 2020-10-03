@@ -19,23 +19,21 @@ app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
   let number = req.params.n;
   let result;
-  // use for loop to iterate through number passed in and return proper response
-  for (let i = 1; i < 99999; i++) {
-    if (number % 3 === 0) {
-      if (number % 5 === 0) {
-        console.log('FizzBuzz');
-        result = 'FizzBuzz';
-      } else if (number % 3 === 0) {
-        console.log('Fizz');
-        result = 'Fizz';
-      }
-    } else if (number % 5 === 0) {
-      console.log('Buzz');
-      result = 'Buzz';
-    } else {
-      console.log(i);
+  if (number % 3 === 0) {
+    if (number % 5 === 0) {
+      console.log('FizzBuzz');
+      result = 'FizzBuzz';
+    } else if (number % 3 === 0) {
+      console.log('Fizz');
+      result = 'Fizz';
     }
+  } else if (number % 5 === 0) {
+    console.log('Buzz');
+    result = 'Buzz';
+  } else {
+    console.log(i);
   }
+
   res.send(result);
 });
 
