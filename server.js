@@ -19,7 +19,9 @@ app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
   let number = req.params.n;
   let result;
-  if (number % 3 === 0 && number % 5 === 0) {
+  if (number.length > 5) {
+    console.log('Please input up to 5 numbers');
+  } else if (number % 3 === 0 && number % 5 === 0) {
     console.log('FizzBuzz');
     result = 'FizzBuzz';
   } else if (number % 3 === 0) {
