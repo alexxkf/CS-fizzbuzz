@@ -1,3 +1,3 @@
 # CS-fizzbuzz
 
-server side FizzBuzz application built with express.js
+simple server built with express.js
