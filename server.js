@@ -19,19 +19,18 @@ app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
   let number = req.params.n;
   let result;
-  if (number % 3 === 0) {
-    if (number % 5 === 0) {
-      console.log('FizzBuzz');
-      result = 'FizzBuzz';
-    } else if (number % 3 === 0) {
-      console.log('Fizz');
-      result = 'Fizz';
-    }
+  if (number % 3 === 0 && number % 5 === 0) {
+    console.log('FizzBuzz');
+    result = 'FizzBuzz';
+  } else if (number % 3 === 0) {
+    console.log('Fizz');
+    result = 'Fizz';
   } else if (number % 5 === 0) {
     console.log('Buzz');
     result = 'Buzz';
   } else {
-    console.log(i);
+    console.log(number);
+    result = number;
   }
 
   res.send(result);
