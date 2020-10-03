@@ -17,18 +17,19 @@ app.use(bodyParser.json());
 
 app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
-  let fizzbuzz = [`${req.params.n}`];
+  let number = req.params.n;
   let result;
+  // use for loop to iterate through number passed in and return proper response
   for (let i = 1; i < 99999; i++) {
-    if (fizzbuzz % 3 === 0) {
-      if (fizzbuzz % 5 === 0) {
+    if (number % 3 === 0) {
+      if (number % 5 === 0) {
         console.log('FizzBuzz');
         result = 'FizzBuzz';
-      } else if (fizzbuzz % 3 === 0) {
+      } else if (number % 3 === 0) {
         console.log('Fizz');
         result = 'Fizz';
       }
-    } else if (fizzbuzz % 5 === 0) {
+    } else if (number % 5 === 0) {
       console.log('Buzz');
       result = 'Buzz';
     } else {
@@ -38,8 +39,8 @@ app.get('/fizzbuzz/:n', (req, res) => {
   res.send(result);
 });
 
-app.listen(8000, () => {
-  console.log('Node.js listening on port ' + 8000);
+app.listen(3000, () => {
+  console.log('Node.js listening on port ' + 3000);
 });
 
 console.log(app);
