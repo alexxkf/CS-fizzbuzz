@@ -1,9 +1,13 @@
 # CS-fizzbuzz
 
-simple server built with express.js
+simple server built with Node and Express
 
-must have node.js installed
+## Getting started
 
-clone this repo
-run npm install
-run node server.js
+this project requires the following:
+
+- Node
+
+1. Clone the repo
+2. Run NPM install
+3. Run node server.js
