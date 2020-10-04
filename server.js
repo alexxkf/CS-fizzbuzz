@@ -19,7 +19,11 @@ app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
   let number = req.params.n;
   let result;
-  if (number.length > 5) {
+  // ensure value being passed in are numbers
+  if (isNaN(number)) {
+    console.log('Numbers only please');
+  } else if (number.length > 5) {
+    // ensure value is no more than 5 digits
     console.log('Please input up to 5 numbers');
   } else if (number % 3 === 0 && number % 5 === 0) {
     console.log('FizzBuzz');
