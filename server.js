@@ -19,12 +19,15 @@ app.get('/fizzbuzz/:n', (req, res) => {
   // request params for number being passed in
   let number = req.params.n;
   let result;
-  // ensure value being passed in are numbers
+
   if (isNaN(number)) {
+    // ensure value being passed in are numbers
     console.log('Numbers only please');
+    result = 'Numbers only please';
   } else if (number.length > 5) {
     // ensure value is no more than 5 digits
-    console.log('Please input up to 5 numbers');
+    console.log('Please input up to 5 digits');
+    result = 'Please input up to 5 digits';
   } else if (number % 3 === 0 && number % 5 === 0) {
     console.log('FizzBuzz');
     result = 'FizzBuzz';
@@ -35,6 +38,7 @@ app.get('/fizzbuzz/:n', (req, res) => {
     console.log('Buzz');
     result = 'Buzz';
   } else {
+    // if not divisble by 3 or 5 or both return number
     console.log(number);
     result = number;
   }
